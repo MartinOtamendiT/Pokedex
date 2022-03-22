@@ -1,0 +1,256 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Audiowide", sans-serif;
+}
+
+body{
+    background-color: aquamarine;
+    padding: 0.5vw 10vw;
+}
+.pokedex{
+    display: flex;
+}
+.left-case{
+    background-color: #DC0A2D;
+    width: 30vw;
+    height: 42vw;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+    border: 0.2vw solid black;
+}
+    .top-left-out{
+        background-color: black;
+        width: 30vw;
+        height: 10.2vw;
+        clip-path: polygon(100% 0, 0 0, 0 100%, 40% 100%, 55% 42%, 100% 42%);
+        border-top-left-radius: 40%;
+        border-top-right-radius: 40%;
+    }
+        .top-left{
+            background-color: #DC0A2D;
+            width: 30vw;
+            height: 9.5vw;
+            clip-path: polygon(100% 0, 0 0, 0 100%, 40% 100%, 55% 42%, 100% 42%);
+            border-top-left-radius: 35%;
+            border-top-right-radius: 35%;
+            display: flex;
+        }
+            .blueLight{
+                width: 6vw;
+                height: 6vw;
+                background-color: #19699E;
+                border-radius: 100%;
+                border: 0.4vw solid white;
+                margin-top: 1.5vw;
+                margin-left: 3vw;
+            }
+            .blueLight:hover{
+                background-color: #28AAFF;
+                box-shadow: 0  0 2.5vw 0.8vw #28AAFF;
+            }
+            .redLight{
+                width: 1.5vw;
+                height: 1.5vw;
+                background-color: #E44E4E;
+                border-radius: 100%;
+                border: 0.1vw solid black;
+                margin-top: 1.5vw;
+                margin-left: 1.4vw;
+            }
+            .yellowLight{
+                width: 1.5vw;
+                height: 1.5vw;
+                background-color: #FEFE45;
+                border-radius: 100%;
+                border: 0.1vw solid black;
+                margin-top: 1.5vw;
+                margin-left: 1vw;
+            }
+            .greenLight{
+                width: 1.5vw;
+                height: 1.5vw;
+                background-color: #62B729;
+                border-radius: 100%;
+                border: 0.1vw solid black;
+                margin-top: 1.5vw;
+                margin-left: 1vw;
+            }
+    .left-center-out{
+        margin-top: -5.3vw;
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+        background-color: black;
+        border-bottom-left-radius: 10%;
+        width: 29vw;
+        height: 36.6vw;
+        clip-path: polygon(100% 100%, 0 100%, 0 16%, 41% 16%, 56% 0, 100% 0);
+        display: flex;
+    }
+        .left-center{
+            margin: 0.3vw;
+            background-color: #DC0A2D;
+            border-bottom-left-radius: 10%;
+            width: 28.5vw;
+            height: 36vw;
+            clip-path: polygon(100% 100%, 0 100%, 0 16%, 41% 16%, 56% 0, 100% 0);
+        }
+            .screen-out{
+                margin-top: 8vw;
+                margin-left: 4.3vw;
+                border-top-left-radius: 5%;
+                border-top-right-radius: 5%;
+                border-bottom-right-radius: 5%;
+                border-bottom-left-radius: 20%;
+                background-color: #DEDEDE;
+                width: 20vw;
+                height: 18vw;
+                display: flex;
+                flex-direction: column;
+            }
+            .screen-out-top{
+                display: flex;
+                justify-content: center;
+            }
+                .redCircle1{
+                    width: 0.6vw;
+                    height: 0.6vw;
+                    background-color: #DC0A2D;
+                    border-radius: 100%;
+                    border: 0.1vw solid black;
+                    margin-top: 0.4vw;
+                    margin-bottom: 0.4vw;
+                }
+                .redCircle2{
+                    width: 0.6vw;
+                    height: 0.6vw;
+                    background-color: #DC0A2D;
+                    border-radius: 100%;
+                    border: 0.1vw solid black;
+                    margin-left: 1.4vw;
+                    margin-top: 0.4vw;
+                    margin-bottom: 0.4vw;
+                }
+            .pokeScreen{
+                background-color: #28AAFD;
+                border: 0.1vw solid black;
+                width: 14vw;
+                height: 14vw;
+                margin-left: 3.1vw;
+            }
+                .pokeScreen img{
+                    width: 100%; 
+                    height: 100%;
+                }
+            .screen-out-bottom{
+                display: flex;
+                justify-content: space-around;
+            }
+                .redCircle3{
+                    width: 1.4vw;
+                    height: 1.4vw;
+                    background-color: #DC0A2D;
+                    border-radius: 100%;
+                    border: 0.1vw solid black;
+                    margin-right: 5vw;
+                    margin-top: 0.3vw;
+                }
+                .screen-out-bottom img{
+                    height: 1.8vw;
+                }
+        .left-bottom{
+            margin: 1vw 2vw;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: auto auto auto;
+        }   
+            .circleButton{
+                background-color: #2B2B2B;
+                font-size: 1.1vw;
+                width: 3.1vw;
+                height: 3.1vw;
+                border-radius: 100%;
+                grid-row-start: 1;
+                grid-row-end: 3;
+            }
+            .redButton{
+                background-color: #C70C13;
+                font-size: 1.1vw;
+                width: 3.5vw;
+                height: 1vw;
+                border-radius: 25%;
+            }
+            .blueButton{
+                background-color: #4C8FD2;
+                font-size: 1.1vw;
+                width: 3.5vw;
+                height: 1vw;
+                border-radius: 25%;
+            }
+            .pokename{
+                background-color: #51AE5F;
+                color: white;
+                font-size: 1.3vw;
+                width: 12vw;
+                height: 4vw;
+                grid-column-start: 2;
+                grid-column-end: 4;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+            .buscarButton{
+                background-color: #2B2B2B;
+                color: white;
+                font-size: 1vw;
+                padding-left: 0.5vw;
+                clip-path: polygon(0 38%, 35% 38%, 35% 0%, 65% 0%, 65% 38%, 100% 38%, 100% 63%, 65% 63%, 65% 100%, 35% 100%, 35% 63%, 0 63%);
+                border-radius: 50%;
+                width: 7vw;
+                height: 7vw;
+                grid-row-start: 2;
+                grid-row-end: 4;
+                grid-column-start: 4;
+                grid-column-end: 5;
+            }
+.hinge{
+    background-color: #DC0A2D;
+    border: 0.2vw solid black;
+    margin-top: 4.4vw;
+    margin-left: -0.4vw;
+    width: 1vw;
+    height: 37.6vw;
+    z-index: 0;
+}
+    .middleSquare{
+        background-color: #DC0A2D;
+    }
+.right-case{
+    background-color: #DC0A2D;
+    width: 30vw;
+    height: 37.6vw;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    margin-top: 4.4vw;
+    margin-left: -0.4vw;
+    border: 0.2vw solid black;
+}
+    .right-center-out{
+        margin-top: 0.5vw;
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+        background-color: black;
+        border-bottom-right-radius: 10%;
+        width: 29vw;
+        height: 36.6vw;
+        clip-path: polygon(100% 100%, 0 100%, 0 0, 44% 0, 59% 16%, 100% 16%);
+        display: flex;
+    }
+        .right-center{
+            margin: 0.3vw;
+            background-color: #DC0A2D;
+            border-bottom-right-radius: 10%;
+            width: 28.5vw;
+            height: 36vw;
+            clip-path: polygon(100% 100%, 0 100%, 0 0, 44% 0, 59% 16%, 100% 16%);
+        }       
