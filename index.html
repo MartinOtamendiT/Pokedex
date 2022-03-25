@@ -41,7 +41,7 @@
                         <button class="redButton"></button>
                         <button class="leftBlueButton"></button>
                         <input type="text" value="pikachu" id="pokeName" name="pokeName" class="pokename">
-                        <button onclick="fetchPokemon()" class="buscarButton">Buscar</button>    
+                        <button onclick="getPokemon()" class="buscarButton">Buscar</button>    
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
         <div class="right-case">
             <div class="right-center-out">
                 <div class="right-center">
-                    <div class="rightCenterScreen">Pokemon</div>
+                    <div class="rightCenterScreen" id="rightScreen"></div>
                     <div class="rightBlueButtons">
                         <button class="rightBlueButton"></button>
                         <button class="rightBlueButton"></button>
@@ -73,8 +73,8 @@
                         <div class="rightYellowLight"></div>
                     </div>
                     <div class="bottomScreens">
-                        <div class="bottomScreen">No</div>
-                        <div class="bottomScreen">Tipo</div>
+                        <div class="bottomScreen" id="pokeNum"></div>
+                        <div class="bottomScreen" id="pokeType"></div>
                     </div>
                 </div>
             </div>
