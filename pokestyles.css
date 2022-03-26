@@ -6,7 +6,10 @@
 
 body{
     background-color: aquamarine;
-    padding: 0.5vw 10vw;
+    padding: 0.5vw 22vw;
+}
+body h1{
+    text-align: center;
 }
 .pokedex{
     display: flex;
@@ -45,6 +48,20 @@ body{
                 border: 0.4vw solid white;
                 margin-top: 1.5vw;
                 margin-left: 3vw;
+            }
+            .blinkBlueLight{
+                animation: blink 3s linear infinite;
+            }
+            @keyframes blink{
+                0%, 20%, 40%, 60%, 80%, 100%{
+                    background-color: #19699E;
+                    box-shadow: none; 
+                }
+                10%, 30%, 50%, 70%, 90%{
+                    background-color: #28AAFF;
+                    box-shadow: 0  0 2.5vw 0.8vw #28AAFF;
+                }
+
             }
             .blueLight:hover{
                 background-color: #28AAFF;
@@ -219,8 +236,21 @@ body{
     height: 37.6vw;
     z-index: 0;
 }
-    .middleSquare{
+    .topHinge{
         background-color: #DC0A2D;
+        border: 0.2vw solid black;
+        margin-top: -0.2vw;
+        margin-left: -0.2vw;
+        height: 2.5vw;
+        width: 1vw;
+    }
+    .bottomHinge{
+        background-color: #DC0A2D;
+        border: 0.2vw solid black;
+        margin-top: 32.2vw;
+        margin-left: -0.2vw;
+        height: 2.5vw;
+        width: 1vw;
     }
 .right-case{
     background-color: #DC0A2D;
@@ -256,13 +286,16 @@ body{
             .rightCenterScreen{
                 background-color: #2B2B2B;
                 color: white;
-                font-size: 1.1vw;
+                font-size: 1vw;
                 width: 22vw;
-                height: 8vw;
+                height: 8.6vw;
                 border-radius: 5%;
-                margin-top: 7.8vw;
+                margin-top: 7.2vw;
                 margin-left: 3.3vw;
             }
+                .rightCenterScreen p{
+                    margin-left: 0.8vw;
+                }
             .rightBlueButtons{
                 display: grid;
                 grid-template-columns: auto auto auto auto auto;
@@ -330,3 +363,16 @@ body{
                     height: 3vw;
                     border-radius: 5%;
                 }
+                    .bottomScreen p{
+                        margin-left: 0.8vw;
+                    }
+
+/*Responsive*/
+@media screen and (max-width:1275px){
+    body h1{
+        font-size: 4vw;
+    }
+    /*.pokedex{
+        flex-direction: column;
+    }*/
+}

@@ -23,11 +23,22 @@ async function getPokemon(){
     //Especie.
     res = await fetch(pokeData.species.url);
     let pokeSpecie = await res.json();
-    //Descripcion
+    //Descripcion.
     let pokeDescription = pokeSpecie.flavor_text_entries;
     const _pokeDescription = pokeDescription.filter(
         (detail) => detail.language.name === "es");
     console.log(_pokeDescription[0].flavor_text.replace(/\n/g, " "));
+    //Peso.
+    let pokeWeight=pokeData.weight;
+    //Altura.
+    let pokeHeight=pokeData.height;
+    //Habilidades.
+    let pokeAbilities;
+    res = await fetch(pokeData.abilities[0].ability.url);
+    //console.log(res);
+    pokeAbilities=[await res.json()];
+    res = await fetch(pokeData.abilities[1].ability.url);
+    pokeAbilities.push(await res.json());
 
     /*fetch(url)
         .then((res) => {
@@ -50,13 +61,19 @@ async function getPokemon(){
         _pokeName.value=pokeName;
         //Id
         const _pokeID=document.getElementById("pokeNum");
-        _pokeID.innerHTML=`No. ${pokeID}`;   
+        _pokeID.innerHTML=`<p>No. ${pokeID}</p>`;   
         //Tipo
         const _pokeType=document.getElementById("pokeType");
-        _pokeType.innerHTML=`<p>Tipo:<br>${pokeType.names[5].name}<p>`;
+        _pokeType.innerHTML=`<p>Tipo:<br>&nbsp&nbsp${pokeType.names[5].name}</p>`;
         //Especie
-        const _pokeSpecie=document.getElementById("rightScreen");
-        _pokeSpecie.innerHTML=`<p>Especie: ${pokeSpecie.genera[5].genus}<p>`;
+        const _pokeRightScreen=document.getElementById("rightScreen");
+        _pokeRightScreen.innerHTML=`<p>Especie: ${pokeSpecie.genera[5].genus}.<br>
+        Peso: ${pokeWeight}.<br>
+        Altura: ${pokeHeight}.<br>
+        Habilidades:<br>
+        &nbsp&nbsp&nbsp*${pokeAbilities[0].names[5].name}<br>
+        &nbsp&nbsp&nbsp*${pokeAbilities[1].names[5].name}
+        </p>`;
 
         let pokeString=pokeName+". Tipo: "+ pokeType.names[5].name+". Especie: "+pokeSpecie.genera[5].genus+". "+_pokeDescription[0].flavor_text.replace(/\n/g, " ");
         speak(pokeString);
@@ -71,4 +88,27 @@ function speak(pokeString){
     message.lang = 'es-US';
     message.text=pokeString;
     speechSynthesis.speak(message);
+    message.onstart = () => {
+        onBlinkBlueLight();
+    };
+    message.onend = () => {
+        offBlinkBlueLight();
+    };
+         
+}
+
+function onBlinkBlueLight(){
+    const blueLight=document.getElementById("blueLight");
+    blueLight.classList.add("blinkBlueLight");
+}
+function offBlinkBlueLight(){
+    const blueLight=document.getElementById("blueLight");
+    blueLight.classList.remove("blinkBlueLight");
+}
+
+//Elige un pokemon de entre 898 al azar para buscar.
+function pokeRandom(){
+    const _pokeName=document.getElementById("pokeName");
+    _pokeName.value=Math.floor(Math.random() * 898)+ 1;
+    getPokemon();
 }
