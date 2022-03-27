@@ -38,8 +38,8 @@
                     </div>
                     <div class="left-bottom">
                         <button onclick="pokeRandom()" class="circleButton"></button>
-                        <button class="redButton"></button>
-                        <button class="leftBlueButton"></button>
+                        <button onclick="stopSpeaking()" class="redButton"></button>
+                        <button onclick="repeatSpeaking()" class="leftBlueButton"></button>
                         <input type="text" value="pikachu" id="pokeName" name="pokeName" class="pokename">
                         <button onclick="getPokemon()" class="buscarButton">Buscar</button>    
                     </div>
@@ -55,10 +55,10 @@
                 <div class="right-center">
                     <div class="rightCenterScreen" id="rightScreen"></div>
                     <div class="rightBlueButtons">
-                        <button class="rightBlueButton"></button>
-                        <button class="rightBlueButton"></button>
-                        <button class="rightBlueButton"></button>
-                        <button class="rightBlueButton"></button>
+                        <button onclick="playPokeDescription(0)" class="rightBlueButton"></button>
+                        <button onclick="playPokeDescription(1)" class="rightBlueButton"></button>
+                        <button onclick="playPokeDescription(2)" class="rightBlueButton"></button>
+                        <button onclick="playPokeDescription(3)" class="rightBlueButton"></button>
                         <button class="rightBlueButton"></button>
                         <button class="rightBlueButton"></button>
                         <button class="rightBlueButton"></button>
@@ -71,8 +71,8 @@
                         <button class="blackButton"></button>
                     </div>
                     <div class="bottomButtons">
-                        <button class="whiteLeftButton"></button>
-                        <button class="whiteRightButton"></button>
+                        <button onclick="previousPokemon()" class="whiteLeftButton"></button>
+                        <button onclick="nextPokemon()" class="whiteRightButton"></button>
                         <div class="rightYellowLight"></div>
                     </div>
                     <div class="bottomScreens">
