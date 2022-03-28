@@ -6,11 +6,17 @@
 }
 
 body{
-    background-color: aquamarine;
+    background-color: #047B97;
+    background-image: url("Images/OcenPokemon.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
     padding: 0.5vw 22vw;
 }
 body h1{
     text-align: center;
+    -webkit-text-stroke: 0.1vw #3C5BA4;
+    -webkit-text-fill-color: #FFCC03;
 }
 .pokedex{
     display: flex;
@@ -191,18 +197,23 @@ body h1{
                 border-radius: 100%;
                 grid-row-start: 1;
                 grid-row-end: 3;
+                color: white;
             }
             .redButton{
                 background-color: #C70C13;
                 width: 3.5vw;
                 height: 1vw;
                 border-radius: 25%;
+                color: white;
+                font-size: 0.5vw;
             }
             .leftBlueButton{
                 background-color: #4C8FD2;
                 width: 3.5vw;
                 height: 1vw;
                 border-radius: 25%;
+                color: white;
+                font-size: 0.5vw;
             }
             .pokename{
                 background-color: #51AE5F;
@@ -335,6 +346,7 @@ body h1{
                     height: 3.2vw;
                     border-top-left-radius: 10%;
                     border-bottom-left-radius: 10%;
+                    font-size: 2vw;
                 }
                 .whiteRightButton{
                     background-color: #DEDEDE;
@@ -342,6 +354,7 @@ body h1{
                     height: 3.2vw;
                     border-top-right-radius: 10%;
                     border-bottom-right-radius: 10%;
+                    font-size: 2vw;
                 }
                 .rightYellowLight{
                     background-color: #FFDF18;
@@ -368,14 +381,49 @@ body h1{
                     .bottomScreen p{
                         margin-left: 0.8vw;
                     }
+a{
+    color: white;
+    margin-top: 1vw;
+    text-align: center;
+}
 
 /*Responsive*/
-@media screen and (max-width:1275px){
+@media screen and (max-width: 1000px){
+    body{
+        height: 250vw;
+    }
     body h1{
-        font-size: 4vw;
+        transform: translateX(20vw) scale(1.2);
+        font-size: 5.5vw;
     }
     .pokedex{
         flex-direction: column;
+        transform: translate(20vw, 65vw) scale(2.5);
+    }
+    .redCircle3{
+        width: 0.5vw;
+        height: 0.5vw;
+        background-color: #DC0A2D;
+        border: 0.01vw solid black;
+    }
+    .circleButton{
+        font-size: 1vw;
+    }
+    .screen-out-bottom img{
+        height: 1.1vw;
+    }
+    .redButton{
+        border:0.01vw solid black;
+    }
+    .redButton:hover{
+        background-color: #7e080c;
+
+    }           
+    .leftBlueButton{
+        border:0.01vw solid black;
+    }
+    .leftBlueButton:hover{
+        background-color: #2b4f74;
     }
     .hinge{
         margin-top: 0;
@@ -384,19 +432,19 @@ body h1{
         height: 1vw;
     }
     .topHinge{
-        margin-top: -0.2vw;
-        margin-left: 0vw;
+        margin-top: -0.3vw;
+        margin-left: -0.05vw;
         height: 1vw;
         width: 2.5vw;
     }
     .bottomHinge{
-        margin-top:-1.4vw;
+        margin-top:-1.6vw;
         margin-left: 24.3vw;
         height: 1vw;
         width: 2.5vw;
     }
     .right-case{
-        margin-top: 0;
+        margin-top: -0.1vw;
         margin-left: 0.1vw;
         clip-path: polygon(0 84%, 0 0, 100% 0, 100% 100%, 56% 100%, 41% 84%);
         border-top-left-radius: 10%;
@@ -411,5 +459,11 @@ body h1{
     }
     .rightCenterScreen{
         margin-top: 1vw;
+    }
+    .whiteLeftButton{
+        font-size: 1.2vw;
+    }
+    .whiteRightButton{
+        font-size: 1.2vw;
     }
 }

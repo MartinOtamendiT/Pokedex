@@ -3,6 +3,7 @@ const _pokeImage = document.getElementById("pokeImg");
 const _pokeID=document.getElementById("pokeNum");
 const _pokeType=document.getElementById("pokeType");
 const _pokeName=document.getElementById("pokeName");
+const pokeNameInput = document.getElementById("pokeName");
 let pokeDescription;
 const synth = window.speechSynthesis;
 let message=new SpeechSynthesisUtterance;
@@ -14,7 +15,6 @@ let pokeDescriptions=["Datos no disponibles.","Datos no disponibles.","Datos no 
 
 async function getPokemon(){
     //Captura el nombre del pokemon de la entrada.
-    const pokeNameInput = document.getElementById("pokeName");
     let pokeName = pokeNameInput.value;
     pokeName = pokeName.toLowerCase();
     if (synth.speaking) {
@@ -59,9 +59,9 @@ async function getPokemon(){
         }
         //console.log(_pokeDescription[1].flavor_text.replace(/\n/g, " "));
         //Peso.
-        let pokeWeight=pokeData.weight;
+        let pokeWeight=pokeData.weight*0.1;
         //Altura.
-        let pokeHeight=pokeData.height;
+        let pokeHeight=pokeData.height*0.1;
         //Habilidades.
         let pokeAbilities;
         let pokeAbilitesLength=pokeData.abilities.length;
@@ -91,16 +91,16 @@ async function getPokemon(){
         if(pokeAbilitesLength==1){
             //Solo tiene una habilidad.
             _pokeRightScreen.innerHTML=`<p>Especie: ${pokeSpecie.genera[5].genus}.<br>
-                Peso: ${pokeWeight} hm.<br>
-                Altura: ${pokeHeight} dm.<br>
+                Peso: ${pokeWeight.toFixed(2)} kg.<br>
+                Altura: ${pokeHeight.toFixed(2)} m.<br>
                 Habilidades:<br>
                 &nbsp&nbsp&nbsp*${pokeAbilities[0].names[5].name}</p>`;
         }
         else{
             //Tiene dos habilidades.
             _pokeRightScreen.innerHTML=`<p>Especie: ${pokeSpecie.genera[5].genus}.<br>
-                Peso: ${pokeWeight} hm.<br>
-                Altura: ${pokeHeight} dm.<br>
+                Peso: ${pokeWeight.toFixed(2)} kg.<br>
+                Altura: ${pokeHeight.toFixed(2)} m.<br>
                 Habilidades:<br>
                 &nbsp&nbsp&nbsp*${pokeAbilities[0].names[5].name}<br>
                 &nbsp&nbsp&nbsp*${pokeAbilities[1].names[5].name}</p>`;
@@ -184,3 +184,9 @@ function playPokeDescription(index){
         pokeString=pokeDescriptions[index];
         speak(pokeString);
 }
+//Permite buscar un pokemon al teclear enter.
+pokeNameInput.addEventListener("keydown", function(event) {
+    if (event.which == 13) {
+        getPokemon();
+    }
+}); 

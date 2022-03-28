@@ -10,7 +10,7 @@
     <link rel="icon" href="Images/pokeball_icon.png">
 </head>
 <body>
-    <h1>Pokedex LaunchX</h1>
+    <h1>Pokédex LaunchX</h1>
     <container class="pokedex">
         <div class="left-case">
             <div class="top-left-out">
@@ -37,9 +37,9 @@
                         </div>
                     </div>
                     <div class="left-bottom">
-                        <button onclick="pokeRandom()" class="circleButton"></button>
-                        <button onclick="stopSpeaking()" class="redButton"></button>
-                        <button onclick="repeatSpeaking()" class="leftBlueButton"></button>
+                        <button onclick="pokeRandom()" class="circleButton">R</button>
+                        <button onclick="stopSpeaking()" class="redButton">Stop</button>
+                        <button onclick="repeatSpeaking()" class="leftBlueButton">Repeat</button>
                         <input type="text" value="pikachu" id="pokeName" name="pokeName" class="pokename">
                         <button onclick="getPokemon()" class="buscarButton">Buscar</button>    
                     </div>
@@ -71,8 +71,8 @@
                         <button class="blackButton"></button>
                     </div>
                     <div class="bottomButtons">
-                        <button onclick="previousPokemon()" class="whiteLeftButton"></button>
-                        <button onclick="nextPokemon()" class="whiteRightButton"></button>
+                        <button onclick="previousPokemon()" class="whiteLeftButton">&larr;</button>
+                        <button onclick="nextPokemon()" class="whiteRightButton">&rarr;</button>
                         <div class="rightYellowLight"></div>
                     </div>
                     <div class="bottomScreens">
@@ -83,9 +83,9 @@
             </div>
         </div>
     </container>
-    
 </body>
 <footer>
+    <a href="howToUse.html">¿Cómo usar la pokédex?</a>
     <script src="pokedex.js"></script>
 </footer>
 </html>
