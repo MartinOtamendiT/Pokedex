@@ -10,8 +10,10 @@ body{
     background-image: url("Images/OcenPokemon.png");
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
-    padding: 0.5vw 22vw;
+    margin: 0.4vw 22vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 body h1{
     text-align: center;
@@ -381,16 +383,86 @@ body h1{
                     .bottomScreen p{
                         margin-left: 0.8vw;
                     }
-a{
-    color: white;
-    margin-top: 1vw;
+.linkHowTo{
+    background-color: #047c977c;
+    color: white;   
+    font-size: 1.5vw;
+    text-decoration: none;
     text-align: center;
 }
+.linkHowTo:hover{
+    color: #FFCC03;
+    text-decoration: underline;
+}
+/************************************************Page: How to use*********************************************/
+.instructions-body{
+    margin: 2vw 5vw;
+}
+    .instructions{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        background-color: #047c977c;
+        border-radius: 5%;
+    }
+        .instructions h1{
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        .instructions ul{
+            list-style: circle;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+            .instructions li{
+                color: white;
+                text-align: justify;
+                margin-top: 1vw;
+            }
+        .Mantine{
+            width: 26vw;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            margin-top: 5vw;
+        }
+        .Mudkip{
+            width: 7vw;
+            grid-row-start: 2;
+            grid-row-end: 5;
+            margin-top: 28vw;
+        }
+        .enjoy{
+            margin-top: 4vw;
+            margin-left: 20vw;
+            grid-column-start: 1;
+            grid-column-end: 3; 
+            color: white;
+        }
+        .created-by{
+            margin-top: 4vw;
+            margin-bottom: 1vw;
+            margin-left: 35vw;
+            color: white;
+            text-align: justify;
+            grid-column-start: 1;
+            grid-column-end: 3; 
+        }
+            .created-by a{
+                color: white;
+                text-decoration: none;
+            }
+            .created-by a:hover{
+                color: #FFCC03;
+                text-decoration: un;
+            }
 
 /*Responsive*/
 @media screen and (max-width: 1000px){
     body{
         height: 250vw;
+        width: contain;
+        background-position: center;
     }
     body h1{
         transform: translateX(20vw) scale(1.2);
@@ -465,5 +537,43 @@ a{
     }
     .whiteRightButton{
         font-size: 1.2vw;
+    }
+    .linkHowTo{     
+        font-size: 4vw;
+        margin-left: 0;
+        transform: translateY(128vw) translateX(20vw);
+    }
+/************************************************Page: How to use*********************************************/
+    .instructions-body{
+        margin: 5vw 1vw;
+        height: 200vw;
+    }        
+    .instructions h1{
+            font-size: 3.5vw;
+            width: 50vw;
+    }
+    .instructions li{
+        font-size: 2.5vw;
+        margin-top: 1vw;
+    }
+    .Mantine{
+        margin-top: 5vw;
+    }
+    .Mudkip{
+        margin-top: 80vw;
+    }
+    .enjoy{
+        margin-top: 2vw;
+        margin-left: 15vw;
+        font-size: 2vw; 
+    }
+    .created-by{
+        font-size: 2vw;
+        margin-top: 2vw;
+        margin-bottom: 1vw;
+        margin-left: 20vw;
+    }
+    .created-by a{
+        font-size: 2vw;
     }
 }
