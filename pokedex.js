@@ -20,6 +20,8 @@ async function getPokemon(){
     if (synth.speaking) {
         synth.cancel();
     }
+    //Apaga luz roja de error.
+    offRedLightError();
     //Obtiene archivo del pokemon.
     try{
         const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
@@ -122,6 +124,7 @@ async function getPokemon(){
         _pokeImage.src="Images/squirtle-crying.gif";
         pokeString="Sin datos para repetir."
         pokeIntroduction="Datos no disponibles.";
+        onRedLightError();
     }
 }
 
@@ -154,13 +157,21 @@ function offBlinkBlueLight(){
     const blueLight=document.getElementById("blueLight");
     blueLight.classList.remove("blinkBlueLight");
 }
-
+//Prende el led rojo de error.
+function onRedLightError(){
+    const redLightError=document.getElementById("redLightError");
+    redLightError.classList.add("redCircle3LightOn");
+}
+//Apaga el led rojo de error.
+function offRedLightError(){
+    const redLightError=document.getElementById("redLightError");
+    redLightError.classList.remove("redCircle3LightOn");
+}
 //Elige un pokemon de entre 898 al azar para buscar.
 function pokeRandom(){
     _pokeName.value=Math.floor(Math.random() * 898)+ 1;
     getPokemon();
 }
-
 //Busca al pokemon siguiente.
 function nextPokemon(){
     _pokeName.value=currentPokemon+1;

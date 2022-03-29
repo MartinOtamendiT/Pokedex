@@ -10,17 +10,21 @@ body{
     background-image: url("Images/OcenPokemon.png");
     background-repeat: no-repeat;
     background-size:cover;
+    background-attachment: fixed;
+    height: 100%;
     margin: 0.4vw 22vw;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 body h1{
+    position: relative;
     text-align: center;
     -webkit-text-stroke: 0.1vw #3C5BA4;
     -webkit-text-fill-color: #FFCC03;
 }
 .pokedex{
+    position: relative;
     display: flex;
     align-items: center;
 }
@@ -53,34 +57,33 @@ body h1{
             .blueLight{
                 width: 6vw;
                 height: 6vw;
-                background-color: #19699E;
+                background-image: radial-gradient(circle at top left, white, #19699e 55%);
                 border-radius: 100%;
                 border: 0.4vw solid white;
                 margin-top: 1.5vw;
                 margin-left: 3vw;
             }
             .blinkBlueLight{
-                animation: blink 3s linear infinite;
+                animation: blinkBlue 1.2s linear infinite;
             }
-            @keyframes blink{
-                0%, 20%, 40%, 60%, 80%, 100%{
-                    background-color: #19699E;
-                    box-shadow: none; 
-                }
-                10%, 30%, 50%, 70%, 90%{
-                    background-color: #28AAFF;
+            @keyframes blinkBlue{
+                0%, 50%, 100%{
+                    background-image: radial-gradient(circle at top left, white, #28AAFF 55%);
                     box-shadow: 0  0 2.5vw 0.8vw #28AAFF;
                 }
-
+                25%, 75%{
+                    background-image: radial-gradient(circle at top left, white, #19699e 55%);
+                    box-shadow: none; 
+                } 
             }
             .blueLight:hover{
-                background-color: #28AAFF;
+                background-image: radial-gradient(circle at top left, white, #28AAFF 55%);
                 box-shadow: 0  0 2.5vw 0.8vw #28AAFF;
             }
             .redLight{
                 width: 1.5vw;
                 height: 1.5vw;
-                background-color: #E44E4E;
+                background-image: radial-gradient(circle at top left, white, #E44E4E 55%);
                 border-radius: 100%;
                 border: 0.1vw solid black;
                 margin-top: 1.5vw;
@@ -89,7 +92,7 @@ body h1{
             .yellowLight{
                 width: 1.5vw;
                 height: 1.5vw;
-                background-color: #FEFE45;
+                background-image: radial-gradient(circle at top left, white, #FEFE45 55%);
                 border-radius: 100%;
                 border: 0.1vw solid black;
                 margin-top: 1.5vw;
@@ -98,7 +101,7 @@ body h1{
             .greenLight{
                 width: 1.5vw;
                 height: 1.5vw;
-                background-color: #62B729;
+                background-image: radial-gradient(circle at top left, white, #62B729 55%);
                 border-radius: 100%;
                 border: 0.1vw solid black;
                 margin-top: 1.5vw;
@@ -143,7 +146,7 @@ body h1{
                 .redCircle1{
                     width: 0.6vw;
                     height: 0.6vw;
-                    background-color: #DC0A2D;
+                    background-image: radial-gradient(circle at top left, white, #DC0A2D 55%);
                     border-radius: 100%;
                     border: 0.1vw solid black;
                     margin-top: 0.4vw;
@@ -152,7 +155,7 @@ body h1{
                 .redCircle2{
                     width: 0.6vw;
                     height: 0.6vw;
-                    background-color: #DC0A2D;
+                    background-image: radial-gradient(circle at top left, white, #DC0A2D 55%);
                     border-radius: 100%;
                     border: 0.1vw solid black;
                     margin-left: 1.4vw;
@@ -177,11 +180,15 @@ body h1{
                 .redCircle3{
                     width: 1.4vw;
                     height: 1.4vw;
-                    background-color: #DC0A2D;
+                    background-image: radial-gradient(circle at top left, white, #88061c 55%);
                     border-radius: 100%;
                     border: 0.1vw solid black;
                     margin-right: 5vw;
                     margin-top: 0.3vw;
+                }
+                .redCircle3LightOn{
+                    background-image: radial-gradient(circle at top left, white, #DC0A2D 55%);
+                    box-shadow: 0  0 1vw 0.5vw #DC0A2D;
                 }
                 .screen-out-bottom img{
                     height: 1.8vw;
@@ -359,13 +366,17 @@ body h1{
                     font-size: 2vw;
                 }
                 .rightYellowLight{
-                    background-color: #FFDF18;
+                    background-image: radial-gradient(circle at top left, white, #c2ad29 60%);
                     width: 2.6vw;
                     height: 2.6vw;
                     border-radius: 100%;
                     border: 0.1vw solid black;
                     margin-left: 9vw;
                     margin-top: 1.2vw;
+                }
+                .rightYellowLight:hover{
+                    background-image: radial-gradient(circle at top left, white, #FFDF18 60%);
+                    box-shadow: 0  0 2.5vw 0.6vw #FFDF18;
                 }
             .bottomScreens{
                 display: flex;
@@ -384,6 +395,7 @@ body h1{
                         margin-left: 0.8vw;
                     }
 .linkHowTo{
+    position: relative;
     background-color: #047c977c;
     color: white;   
     font-size: 1.5vw;
@@ -460,22 +472,22 @@ body h1{
 /*Responsive*/
 @media screen and (max-width: 1000px){
     body{
-        height: 250vw;
-        width: contain;
         background-position: center;
     }
     body h1{
-        transform: translateX(20vw) scale(1.2);
+        transform: translateY(2vw) scale(1.2);
+        -webkit-text-stroke: 0.2vw #3C5BA4;
+        position: absolute;
         font-size: 5.5vw;
     }
     .pokedex{
         flex-direction: column;
-        transform: translate(20vw, 65vw) scale(2.5);
+        transform: translate(13vw, 68vw) scale(2.4);
+        position: absolute;
     }
     .redCircle3{
         width: 0.5vw;
         height: 0.5vw;
-        background-color: #DC0A2D;
         border: 0.01vw solid black;
     }
     .circleButton{
@@ -502,17 +514,22 @@ body h1{
         margin-left: 3vw;
         width: 27vw;
         height: 1vw;
+        display: flex;
+        justify-content: space-between;
+        
+        overflow: hidden;
     }
     .topHinge{
-        margin-top: -0.3vw;
-        margin-left: -0.05vw;
-        height: 1vw;
+        position: relative;
+        margin-top: -0.1vw;
+        margin-left: -0.2vw;
+        height: 100%;
         width: 2.5vw;
     }
     .bottomHinge{
-        margin-top:-1.6vw;
-        margin-left: 24.3vw;
-        height: 1vw;
+        position: relative;
+        margin-top: -0.1vw;
+        height: 100%;
         width: 2.5vw;
     }
     .right-case{
@@ -541,39 +558,63 @@ body h1{
     .linkHowTo{     
         font-size: 4vw;
         margin-left: 0;
-        transform: translateY(128vw) translateX(20vw);
+        position: absolute;
+        transform: translateY(208vw);
     }
 /************************************************Page: How to use*********************************************/
     .instructions-body{
         margin: 5vw 1vw;
-        height: 200vw;
+    }
+    .instructions{
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto auto;
     }        
     .instructions h1{
-            font-size: 3.5vw;
-            width: 50vw;
+        font-size: 3.5vw;
+        -webkit-text-stroke: 0.1vw #3C5BA4;
+        margin-left: 25vw;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .instructions ul{
+        grid-row-start: 3;
+        grid-row-end: 4;
+        margin: 0 4vw;
     }
     .instructions li{
-        font-size: 2.5vw;
-        margin-top: 1vw;
+        font-size: 2.2vw;
+        margin-top: 0.5vw;
     }
     .Mantine{
-        margin-top: 5vw;
+        margin-top: 0;
+        width: 45vw;
+        margin-top: 4vw;
+        margin-left: 25vw;
+        grid-row-start: 2;
+        grid-row-end: 3;
     }
     .Mudkip{
-        margin-top: 80vw;
+        width: 11vw;
+        margin-top: 0vw;
+        margin-left: 80vw;
+        grid-row-start: 4;
+        grid-row-end: 5;
     }
     .enjoy{
-        margin-top: 2vw;
-        margin-left: 15vw;
-        font-size: 2vw; 
+        margin: 0.5vw 4vw;
+        font-size: 2.2vw;
+        grid-row-start: 5;
+        grid-row-end: 6; 
     }
     .created-by{
-        font-size: 2vw;
-        margin-top: 2vw;
-        margin-bottom: 1vw;
-        margin-left: 20vw;
+        font-size: 2.2vw;
+        margin: 1vw 22vw;
+        grid-row-start: 6;
+        grid-row-end: 7;
     }
     .created-by a{
-        font-size: 2vw;
+        font-size: 2.2vw;
     }
 }
