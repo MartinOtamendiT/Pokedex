@@ -13,6 +13,12 @@ let pokeString="Sin datos para repetir.";
 let pokeIntroduction="Datos no disponibles.";
 let pokeDescriptions=["Datos no disponibles.","Datos no disponibles.","Datos no disponibles.","Datos no disponibles."];
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./serviceWorker.js')
+      .then(reg => console.log('Service Worker registrado', reg))
+      .catch(err => console.warn('Error al registrar Service Worker', err))
+}
+
 async function getPokemon(){
     //Captura el nombre del pokemon de la entrada.
     let pokeName = pokeNameInput.value;

@@ -1,0 +1,19 @@
+{
+    "name": "Pokedex",
+    "short_name": "Pokedex",
+    "description": "Usa esta Pokedex para buscar y aprender sobre pokémones.",
+    "theme_color": "#FFCC03",
+    "background_color": "#047B97",
+    "display": "standalone",
+    "start_url": "./?utm_source=web_app_manifest",
+    "scope": "./",
+    "lang": "en",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "Images/pokeball_icon.png",
+            "sizes": "640x639",
+            "type": "image/png"
+        }
+    ]
+}
