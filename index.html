@@ -31,6 +31,10 @@
                         </div>
                         <div class="pokeScreen">
                             <img src="Images/pokeball_icon.png" alt="Pokemon" id="pokeImg">
+                            <!-- Agrega un elemento de video para mostrar la transmisión de la cámara -->
+                            <video id="camera-feed" autoplay style="display: none;"></video>
+                            <!-- Agrega un canvas para capturar la imagen -->
+                            <canvas id="camera-canvas" style="display: none;"></canvas>
                         </div>
                         <div class="screen-out-bottom">
                             <div class="redCircle3" id="redLightError"></div>
@@ -42,7 +46,8 @@
                         <button onclick="stopSpeaking()" class="redButton">Stop</button>
                         <button onclick="repeatSpeaking()" class="leftBlueButton">Repeat</button>
                         <input type="text" value="pikachu" id="pokeName" name="pokeName" class="pokename">
-                        <button onclick="getPokemon()" class="buscarButton">Buscar</button>    
+                        <button onclick="getPokemon()" class="crossButton">Buscar</button>
+                        <button id="take-photo-button" class="crossButton">Capturar</button>    
                     </div>
                 </div>
             </div>
@@ -65,7 +70,7 @@
                         <button class="rightBlueButton"></button>
                         <button class="rightBlueButton"></button>
                         <button class="rightBlueButton"></button>
-                        <button class="rightBlueButton"></button>
+                        <button class="rightBlueButton" id="toggleCamera">C</button>
                     </div>
                     <div class="blackButtons">
                         <button class="blackButton"></button>
@@ -88,5 +93,6 @@
 </body>
 <footer>
     <script src="pokedex.js"></script>
+    <script src="camera.js"></script>
 </footer>
 </html>

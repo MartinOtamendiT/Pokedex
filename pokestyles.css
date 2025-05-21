@@ -173,6 +173,11 @@ body h1{
                     width: 100%; 
                     height: 100%;
                 }
+                .pokeScreen video{
+                    width: 100%; 
+                    height: 100%;
+                    object-fit: cover;
+                }
             .screen-out-bottom{
                 display: flex;
                 justify-content: space-around;
@@ -235,7 +240,7 @@ body h1{
                 grid-row-start: 3;
                 grid-row-end: 4;
             }
-            .buscarButton{
+            .crossButton{
                 background-color: #2B2B2B;
                 color: white;
                 font-size: 1vw;
@@ -248,6 +253,9 @@ body h1{
                 grid-row-end: 4;
                 grid-column-start: 4;
                 grid-column-end: 5;
+            }
+            #take-photo-button{
+                display: none;
             }
 .hinge{
     background-color: #DC0A2D;

@@ -4,6 +4,11 @@ const _pokeID=document.getElementById("pokeNum");
 const _pokeType=document.getElementById("pokeType");
 const _pokeName=document.getElementById("pokeName");
 const pokeNameInput = document.getElementById("pokeName");
+//Para apertura de cámara.
+let but = document.getElementById("but");
+const _pokeScreen = document.getElementById("pokeScreen");
+let mediaDevices = navigator.mediaDevices;
+
 let pokeDescription;
 const synth = window.speechSynthesis;
 let message=new SpeechSynthesisUtterance;
@@ -206,4 +211,4 @@ pokeNameInput.addEventListener("keydown", function(event) {
     if (event.which == 13) {
         getPokemon();
     }
-}); 
+});
